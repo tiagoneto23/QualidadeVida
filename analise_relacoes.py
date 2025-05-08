@@ -15,9 +15,15 @@ plt.rcParams['figure.figsize'] = (14, 10)
 plt.rcParams['font.size'] = 12
 sns.set_palette('viridis')
 
-# Diretório para salvar as visualizações e resultados
-diretorio_visualizacoes = '/home/ubuntu/analise_pordata/visualizacoes'
-diretorio_resultados = '/home/ubuntu/analise_pordata/resultados'
+# Diretório base (na mesma pasta do script)
+diretorio_base = os.path.join(os.getcwd(), "analise_pordata")
+
+# Diretórios internos
+diretorio_visualizacoes = os.path.join(diretorio_base, "visualizacoes")
+diretorio_resultados = os.path.join(diretorio_base, "resultados")
+
+# Criar diretórios, se não existirem
+os.makedirs(diretorio_visualizacoes, exist_ok=True)
 os.makedirs(diretorio_resultados, exist_ok=True)
 
 # Função para carregar os datasets limpos
@@ -386,5 +392,7 @@ def analisar_pca(df_integrado):
         plt.tight_layout()
         
         # Salvar gráfico
-        caminho_grafico = os.path.jo
-(Content truncated due to size limit. Use line ranges to read in chunks)
+        caminho_grafico = os.path.join(diretorio_visualizacoes, 'pca_circulo_correlacao.png')
+        plt.savefig(caminho_grafico)
+        plt.close()
+        print(f"Gráfico do círculo de correlação salvo em: {caminho_grafico}")

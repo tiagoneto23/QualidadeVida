@@ -10,9 +10,16 @@ plt.rcParams['figure.figsize'] = (12, 8)
 plt.rcParams['font.size'] = 12
 sns.set_palette('viridis')
 
-# Diretório para salvar os resultados da validação
-diretorio_validacao = '/home/ubuntu/analise_pordata/validacao'
-os.makedirs(diretorio_validacao, exist_ok=True)
+# Diretório base (na mesma pasta do script)
+diretorio_base = os.path.join(os.getcwd(), "analise_pordata")
+
+# Diretórios internos
+diretorio_visualizacoes = os.path.join(diretorio_base, "visualizacoes")
+diretorio_resultados = os.path.join(diretorio_base, "resultados")
+
+# Criar diretórios, se não existirem
+os.makedirs(diretorio_visualizacoes, exist_ok=True)
+os.makedirs(diretorio_resultados, exist_ok=True)
 
 def validar_resultados():
     """
@@ -363,5 +370,4 @@ def validar_analises_regressao():
             f.write("VALIDAÇÃO DAS ANÁLISES DE REGRESSÃO\n")
             f.write("="*50 + "\n\n")
             f.write(f"ERRO: Arquivo {caminho_df_integrado} não encontrado.\n")
-            f.write("Não foi possível validar as análises de regressão.\n"
-(Content truncated due to size limit. Use line ranges to read in chunks)
+            f.write("Não foi possível validar as análises de regressão.\n")

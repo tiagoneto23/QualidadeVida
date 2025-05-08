@@ -387,4 +387,3 @@ def criar_dashboard_indicadores(datasets):
             df_filtrado = df_filtrado[df_filtrado['Pais'] == 'Portugal']
         
         # Calcular média por an
-(Content truncated due to size limit. Use line ranges to read in chunks)
