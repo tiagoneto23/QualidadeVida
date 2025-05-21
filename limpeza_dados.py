@@ -24,11 +24,13 @@ def limpar_preprocessar(df, nome_dataset):
     else:
         print(f"Erro ao renomear colunas: número de colunas não corresponde ({len(colunas_originais)} vs {len(colunas_novas)})")
 
+    # ✅ 1.1 Filtrar apenas Portugal
+    df_limpo = df_limpo[df_limpo['Pais'] == 'Portugal']
+    print(f"Linhas mantidas apenas de Portugal: {len(df_limpo)}")
+
     # 2. Converter a coluna Ano para inteiro (quando possível)
     try:
-        # Primeiro, remover valores não numéricos
         df_limpo['Ano'] = pd.to_numeric(df_limpo['Ano'], errors='coerce')
-        # Converter para inteiro, mantendo NaN onde necessário
         df_limpo['Ano'] = df_limpo['Ano'].astype('Int64')
         print("Coluna 'Ano' convertida para inteiro")
     except Exception as e:
@@ -62,7 +64,6 @@ def limpar_preprocessar(df, nome_dataset):
         df_limpo['Indicador'] = 'Taxa de Mortalidade Evitável'
         df_limpo['Unidade'] = 'por 100 mil habitantes'
 
-    # 6. Retornar dataset limpo
     return df_limpo
 
 # Coleta e processa os dados automaticamente
@@ -74,12 +75,9 @@ for caminho, df in datasets.items():
     nome_dataset = os.path.basename(caminho)  # Pega o nome do arquivo sem o caminho
     print(f"\nProcessando dataset: {nome_dataset}")
 
-    # Limpar e processar os dados
     df_limpo = limpar_preprocessar(df, nome_dataset)
     datasets_limpos[nome_dataset] = df_limpo
 
-# Após a importação, `datasets_limpos` já contém os datasets limpos
-
-# Caso você precise salvar os arquivos, descomente a linha abaixo:
+# Se quiser salvar os arquivos:
 # for nome, df in datasets_limpos.items():
 #     df.to_csv(f'{nome}_limpo.csv', index=False)
