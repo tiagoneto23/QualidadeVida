@@ -8,7 +8,7 @@ from matplotlib.colors import LinearSegmentedColormap
 import matplotlib.ticker as mtick
 from scipy import stats
 import warnings
-import limpeza_dados  
+import limpeza_dados  # Importa o módulo de limpeza de dados
 
 # Configurações globais
 warnings.filterwarnings('ignore')
@@ -16,14 +16,14 @@ plt.style.use('seaborn-v0_8-whitegrid')
 sns.set_context("paper", font_scale=1.2)
 
 # Definir diretório base
-DIRETORIO_BASE = "C:/Users/fuguz/DATASETS"
+DIRETORIO_BASE = "C:/Users/fuguz/Documents/ProjetoPROG/ElementosDeIACD/TRABALHOPRATICO/analise_pordata/visualizacoes"
 diretorio_visualizacoes = os.path.join(DIRETORIO_BASE, "visualizacoes")
 
 # Criar diretório para salvar visualizações
 os.makedirs(diretorio_visualizacoes, exist_ok=True)
 
 # Definir paletas de cores personalizadas
-paleta_portugal = ['#006600', '#FF0000']  
+paleta_portugal = ['#006600', '#FF0000']
 paleta_europa = sns.color_palette("Blues_r", 10)
 paleta_correlacao = sns.diverging_palette(240, 10, as_cmap=True)
 paleta_multipla = sns.color_palette("husl", 10)
@@ -109,6 +109,51 @@ def criar_dataframe_integrado(datasets):
     return df_integrado
 
 
+# Função para criar gráfico de evolução temporal múltipla
+def criar_grafico_evolucao_multipla(df_integrado):
+    """
+    Cria um gráfico de evolução temporal para todos os indicadores,
+    normalizando os valores para permitir comparação.
+    """
+    # Verificar se há dados suficientes
+    if df_integrado.empty or df_integrado.shape[1] <= 1:
+        print("Dados insuficientes para criar gráfico de evolução múltipla")
+        return
+
+    # Criar cópia do dataframe para normalização
+    df_norm = df_integrado.copy()
+
+    # Normalizar cada indicador (min-max scaling)
+    for col in df_norm.columns:
+        if col != 'Ano' and not df_norm[col].isna().all():
+            min_val = df_norm[col].min()
+            max_val = df_norm[col].max()
+            if max_val > min_val:  # Evitar divisão por zero
+                df_norm[col] = (df_norm[col] - min_val) / (max_val - min_val)
+
+    # Criar figura
+    plt.figure(figsize=(12, 8))
+
+    # Plotar cada indicador
+    for i, col in enumerate(df_norm.columns):
+        if col != 'Ano' and not df_norm[col].isna().all():
+            plt.plot(df_norm['Ano'], df_norm[col], marker='o', linewidth=2,
+                     label=col, color=paleta_multipla[i % len(paleta_multipla)])
+
+    # Configurar gráfico
+    plt.title('Evolução Temporal Normalizada dos Indicadores em Portugal', fontsize=16)
+    plt.xlabel('Ano', fontsize=14)
+    plt.ylabel('Valor Normalizado (0-1)', fontsize=14)
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.legend(fontsize=12, loc='best')
+    plt.tight_layout()
+
+    # Salvar gráfico
+    plt.savefig(os.path.join(diretorio_visualizacoes, 'evolucao_temporal_multipla.png'), dpi=300, bbox_inches='tight')
+    plt.close()
+
+    print("Gráfico de evolução temporal múltipla criado com sucesso")
+
 # Função para criar dataframe integrado para comparação entre países
 def criar_dataframe_paises(datasets, ano_referencia=None):
     """
@@ -185,53 +230,6 @@ def criar_dataframe_paises(datasets, ano_referencia=None):
         df_paises.rename(columns={'Valor': nome}, inplace=True)
 
     return df_paises
-
-
-# Função para criar gráfico de evolução temporal múltipla
-def criar_grafico_evolucao_multipla(df_integrado):
-    """
-    Cria um gráfico de evolução temporal para todos os indicadores,
-    normalizando os valores para permitir comparação.
-    """
-    # Verificar se há dados suficientes
-    if df_integrado.empty or df_integrado.shape[1] <= 1:
-        print("Dados insuficientes para criar gráfico de evolução múltipla")
-        return
-
-    # Criar cópia do dataframe para normalização
-    df_norm = df_integrado.copy()
-
-    # Normalizar cada indicador (min-max scaling)
-    for col in df_norm.columns:
-        if col != 'Ano' and not df_norm[col].isna().all():
-            min_val = df_norm[col].min()
-            max_val = df_norm[col].max()
-            if max_val > min_val:  
-                df_norm[col] = (df_norm[col] - min_val) / (max_val - min_val)
-
-    # Criar figura
-    plt.figure(figsize=(12, 8))
-
-    # Plotar cada indicador
-    for i, col in enumerate(df_norm.columns):
-        if col != 'Ano' and not df_norm[col].isna().all():
-            plt.plot(df_norm['Ano'], df_norm[col], marker='o', linewidth=2,
-                     label=col, color=paleta_multipla[i % len(paleta_multipla)])
-
-    # Configurar gráfico
-    plt.title('Evolução Temporal Normalizada dos Indicadores em Portugal', fontsize=16)
-    plt.xlabel('Ano', fontsize=14)
-    plt.ylabel('Valor Normalizado (0-1)', fontsize=14)
-    plt.grid(True, linestyle='--', alpha=0.7)
-    plt.legend(fontsize=12, loc='best')
-    plt.tight_layout()
-
-    # Salvar gráfico
-    plt.savefig(os.path.join(diretorio_visualizacoes, 'evolucao_temporal_multipla.png'), dpi=300, bbox_inches='tight')
-    plt.close()
-
-    print("Gráfico de evolução temporal múltipla criado com sucesso")
-
 
 # Função para criar gráficos de dispersão com regressão
 def criar_graficos_dispersao_regressao(df_integrado, df_paises):
@@ -547,7 +545,7 @@ def criar_dashboard_integrado(df_integrado, df_paises):
         if col != 'Ano' and not df_norm[col].isna().all():
             min_val = df_norm[col].min()
             max_val = df_norm[col].max()
-            if max_val > min_val:  
+            if max_val > min_val:  # Evitar divisão por zero
                 df_norm[col] = (df_norm[col] - min_val) / (max_val - min_val)
 
     # Plotar cada indicador normalizado
@@ -683,7 +681,7 @@ def criar_dashboard_integrado(df_integrado, df_paises):
             ax.text(0.5, 0.5, "Indicadores não disponíveis", ha='center', va='center', fontsize=12)
 
     # 7-9. Gráficos de tendência temporal para indicadores individuais (linha inferior)
-    indicadores = [col for col in df_integrado.columns if col != 'Ano'][:3]  
+    indicadores = [col for col in df_integrado.columns if col != 'Ano'][:3]  # Limitar a 3
 
     for i, indicador in enumerate(indicadores):
         ax = fig.add_subplot(gs[2, i])
@@ -768,7 +766,7 @@ def criar_grafico_tendencias_temporais(df_integrado):
 
     # Determinar número de linhas e colunas para subplots
     n_cols = min(3, n_indicadores)
-    n_rows = (n_indicadores + n_cols - 1) // n_cols  
+    n_rows = (n_indicadores + n_cols - 1) // n_cols  # Arredondamento para cima
 
     # Criar subplots
     fig, axes = plt.subplots(n_rows, n_cols, figsize=(15, 4 * n_rows), sharex=True)
