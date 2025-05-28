@@ -28,16 +28,16 @@ os.makedirs(diretorio_resultados, exist_ok=True)
 
 # Função para carregar os datasets limpos
 def carregar_datasets_limpos():
-    diretorio = '/home/ubuntu/analise_pordata/'
+    diretorio = 'C:/Users/fuguz/Documents/ProjetoPROG/ElementosDeIACD/TRABALHOPRATICO'
     datasets = {}
     
     # Lista de arquivos limpos
     arquivos_limpos = [
-        "GANHOMEDIOMENSAL_limpo.csv",
-        "ESPERANÇADEVIDA_limpo.csv",
-        "DESPESASAUDE_limpo.csv",
-        "PERCEÇAODESAUDE_limpo.csv",
-        "TAXADEMORTALIDADEVITAVEL_limpo.csv"
+        "GANHOMEDIOMENSAL.csv_limpo.csv",
+        "ESPERANÇADEVIDA.csv_limpo.csv",
+        "DESPESASAUDE.csv_limpo.csv",
+        "PERCEÇAODESAUDE.csv_limpo.csv",
+        "TAXADEMORTALIDADEVITAVEL.csv_limpo.csv"
     ]
     
     for arquivo in arquivos_limpos:
