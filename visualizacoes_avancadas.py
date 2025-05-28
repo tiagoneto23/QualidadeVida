@@ -8,7 +8,7 @@ from matplotlib.colors import LinearSegmentedColormap
 import matplotlib.ticker as mtick
 from scipy import stats
 import warnings
-import limpeza_dados  # Importa o módulo de limpeza de dados
+import limpeza_dados  
 
 # Configurações globais
 warnings.filterwarnings('ignore')
@@ -23,7 +23,7 @@ diretorio_visualizacoes = os.path.join(DIRETORIO_BASE, "visualizacoes")
 os.makedirs(diretorio_visualizacoes, exist_ok=True)
 
 # Definir paletas de cores personalizadas
-paleta_portugal = ['#006600', '#FF0000']  # Verde e vermelho (cores da bandeira portuguesa)
+paleta_portugal = ['#006600', '#FF0000']  
 paleta_europa = sns.color_palette("Blues_r", 10)
 paleta_correlacao = sns.diverging_palette(240, 10, as_cmap=True)
 paleta_multipla = sns.color_palette("husl", 10)
@@ -206,7 +206,7 @@ def criar_grafico_evolucao_multipla(df_integrado):
         if col != 'Ano' and not df_norm[col].isna().all():
             min_val = df_norm[col].min()
             max_val = df_norm[col].max()
-            if max_val > min_val:  # Evitar divisão por zero
+            if max_val > min_val:  
                 df_norm[col] = (df_norm[col] - min_val) / (max_val - min_val)
 
     # Criar figura
@@ -547,7 +547,7 @@ def criar_dashboard_integrado(df_integrado, df_paises):
         if col != 'Ano' and not df_norm[col].isna().all():
             min_val = df_norm[col].min()
             max_val = df_norm[col].max()
-            if max_val > min_val:  # Evitar divisão por zero
+            if max_val > min_val:  
                 df_norm[col] = (df_norm[col] - min_val) / (max_val - min_val)
 
     # Plotar cada indicador normalizado
@@ -683,7 +683,7 @@ def criar_dashboard_integrado(df_integrado, df_paises):
             ax.text(0.5, 0.5, "Indicadores não disponíveis", ha='center', va='center', fontsize=12)
 
     # 7-9. Gráficos de tendência temporal para indicadores individuais (linha inferior)
-    indicadores = [col for col in df_integrado.columns if col != 'Ano'][:3]  # Limitar a 3
+    indicadores = [col for col in df_integrado.columns if col != 'Ano'][:3]  
 
     for i, indicador in enumerate(indicadores):
         ax = fig.add_subplot(gs[2, i])
@@ -768,7 +768,7 @@ def criar_grafico_tendencias_temporais(df_integrado):
 
     # Determinar número de linhas e colunas para subplots
     n_cols = min(3, n_indicadores)
-    n_rows = (n_indicadores + n_cols - 1) // n_cols  # Arredondamento para cima
+    n_rows = (n_indicadores + n_cols - 1) // n_cols  
 
     # Criar subplots
     fig, axes = plt.subplots(n_rows, n_cols, figsize=(15, 4 * n_rows), sharex=True)
