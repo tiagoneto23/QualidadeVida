@@ -57,7 +57,7 @@ def analisar_estrutura(df, nome):
 datasets = recolha_dados()
 
 # Caminho para salvar o resumo
-resumo_path = os.path.join("C:/Users/Nambi/Documents/projecto", "resumo_datasets.txt")
+resumo_path = os.path.join("C:/Users/fuguz/Documents/ProjetoPROG/ElementosDeIACD/TRABALHOPRATICO", "resumo_datasets.txt")
 
 # Abrir o arquivo de resumo para escrita
 with open(resumo_path, 'w', encoding='utf-8') as f:
