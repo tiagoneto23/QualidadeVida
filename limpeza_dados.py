@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-from recolha_dados import recolha_dados  # Importa a função recolha_dados do primeiro arquivo
+from recolha_dados import recolha_dados  
 
 # Função para limpar e pré-processar os dados
 def limpar_preprocessar(df, nome_dataset):
@@ -24,7 +24,6 @@ def limpar_preprocessar(df, nome_dataset):
     else:
         print(f"Erro ao renomear colunas: número de colunas não corresponde ({len(colunas_originais)} vs {len(colunas_novas)})")
 
-    # ✅ 1.1 Filtrar apenas Portugal
     df_limpo = df_limpo[df_limpo['Pais'] == 'Portugal']
     print(f"Linhas mantidas apenas de Portugal: {len(df_limpo)}")
 
@@ -72,12 +71,9 @@ datasets_limpos = {}
 
 # Limpeza e pré-processamento dos dados coletados
 for caminho, df in datasets.items():
-    nome_dataset = os.path.basename(caminho)  # Pega o nome do arquivo sem o caminho
+    nome_dataset = os.path.basename(caminho)  
     print(f"\nProcessando dataset: {nome_dataset}")
 
     df_limpo = limpar_preprocessar(df, nome_dataset)
     datasets_limpos[nome_dataset] = df_limpo
 
-# Se quiser salvar os arquivos:
-# for nome, df in datasets_limpos.items():
-#     df.to_csv(f'{nome}_limpo.csv', index=False)
