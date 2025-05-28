@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import stats
 import os
-import limpeza_dados  # Importa o módulo de limpeza de dados
+import limpeza_dados 
 
 # Configurações para visualizações
 plt.style.use('seaborn-v0_8-whitegrid')
@@ -19,10 +19,9 @@ diretorio_resultados = os.path.join(diretorio_base, "resultados")
 os.makedirs(diretorio_visualizacoes, exist_ok=True)
 os.makedirs(diretorio_resultados, exist_ok=True)
 
-# Função para carregar os datasets já limpos do módulo `limpeza_dados`
+
 def carregar_datasets_limpos():
-    # Carrega os datasets limpos diretamente do módulo `limpeza_dados`
-    datasets = limpeza_dados.datasets_limpos  # Acessa o dicionário de datasets limpos do módulo de limpeza
+    datasets = limpeza_dados.datasets_limpos
     return datasets
 
 # Estatística descritiva
