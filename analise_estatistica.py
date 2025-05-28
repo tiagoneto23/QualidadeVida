@@ -110,7 +110,7 @@ def analisar_correlacoes(datasets):
 # Main
 def main():
     print("Iniciando análise estatística dos datasets da PORDATA...")
-    datasets = carregar_datasets_limpos()  # Carrega os datasets limpos diretamente do módulo
+    datasets = carregar_datasets_limpos()  
     if not datasets:
         print("Nenhum dataset carregado com sucesso. Encerrando.")
         return
