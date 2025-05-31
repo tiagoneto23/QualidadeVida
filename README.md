@@ -1,4 +1,4 @@
-# 📊 Qualidade de Vida em Portugal
+# Qualidade de Vida em Portugal
 
 Projeto desenvolvido no âmbito da unidade curricular de Ciência de Dados.
 
@@ -55,9 +55,9 @@ Todos os dados foram recolhidos da [PORDATA](https://www.pordata.pt/) e estão e
 
 ---
 
-## Relatórios e Entregas
+##  Relatórios e Entregas
 
-- ✅ **[Relatório em formato .ipynb](./Relatorio_final.ipynb)** com explicações organizadas por fase
+- ✅ **[Relatório Final](relatorio_final.ipynb)** com explicações organizadas por fase (para visualização no Google Colab ou Jupyter)
 - ✅ Repositório Git com todo o código usado no projeto
 - ✅ Apresentação narrativa das conclusões extraídas a partir dos dados analisados
 
@@ -75,3 +75,41 @@ Para instalar os pacotes necessários:
 
 ```bash
 pip install pandas matplotlib seaborn numpy
+```
+
+---
+
+## Como Executar o Projeto
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/tiagoneto23/QualidadeVida.git
+```
+
+2. Execute os scripts ou o relatório principal em [Google Colab](https://colab.research.google.com/) ou localmente com Jupyter:
+
+- Abrir `relatorio_final.ipynb` para ver o relatório completo com análises e conclusões.
+
+3. Para executar scripts individuais, use:
+
+```bash
+python nome_do_script.py
+```
+
+---
+
+## Autores
+- Filipe Santana
+- Tiago Neto
+- Simão Nambi 
+
+---
+
+##  Referências
+
+- PORDATA: [https://www.pordata.pt](https://www.pordata.pt)
+- Instituto Nacional de Estatística (INE)
+- Organização Mundial da Saúde (OMS)
+
+---
