@@ -57,7 +57,7 @@ Todos os dados foram recolhidos da [PORDATA](https://www.pordata.pt/) e estão e
 
 ##  Relatórios e Entregas
 
-- ✅ **[Relatório Final](relatorio_final.ipynb)** com explicações organizadas por fase (para visualização no Google Colab ou Jupyter)
+- ✅ **[Relatório Final](relatorio.ipynb)** com explicações organizadas por fase (para visualização no Google Colab ou Jupyter)
 - ✅ Repositório Git com todo o código usado no projeto
 - ✅ Apresentação narrativa das conclusões extraídas a partir dos dados analisados
 
