@@ -105,15 +105,3 @@ Analisar a evolução da qualidade de vida em Portugal com base em dados oficiai
 - Instituto Nacional de Estatística (INE)
 - Organização Mundial da Saúde (OMS)
 ```
-
-**Observações**:
-1. Substitua `[URL_DO_REPOSITÓRIO]` pelo link real do seu repositório
-2. Os caminhos de diretórios podem ser ajustados conforme sua estrutura local
-3. Adicione um arquivo `requirements.txt` com as dependências se necessário
-
-Esta versão inclui todos os elementos que você solicitou em um formato otimizado para GitHub, com:
-- Formatação Markdown adequada
-- Seções claramente organizadas
-- Destaques visuais (emoji e formatação)
-- Informações técnicas completas
-- Instruções de execução
