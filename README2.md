@@ -1,4 +1,5 @@
-# Qualidade de Vida em Portugal em relação a países Europeus
+# Qualidade de Vida em Portugal em relação a países Europeus ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)  ![Status](https://img.shields.io/badge/status-concluído-brightgreen.svg)
+
 
 Projeto desenvolvido no âmbito da unidade curricular de Ciência de Dados.
 
