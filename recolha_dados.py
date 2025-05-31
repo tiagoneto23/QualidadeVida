@@ -1,7 +1,11 @@
 import os
 import pandas as pd
 
+# ================================
+# ATENÇÃO: ALTERAR ESTE CAMINHO!
+# Diretório onde estão guardados os ficheiros .csv
 DIRETORIO_BASE = "C:/Users/fuguz/Documents/ProjetoPROG/ElementosDeIACD/TRABALHOPRATICO"
+# ================================
 
 def recolha_dados():
     arquivos_desejados = [
