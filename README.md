@@ -89,7 +89,7 @@ git clone https://github.com/tiagoneto23/QualidadeVida.git
 
 2. Execute os scripts ou o relatório principal em [Google Colab](https://colab.research.google.com/) ou localmente com Jupyter:
 
-- Abrir `relatorio_final.ipynb` para ver o relatório completo com análises e conclusões.
+- Abrir `relatorio.ipynb` para ver o relatório completo com análises e conclusões.
 
 3. Para executar scripts individuais, use:
 
