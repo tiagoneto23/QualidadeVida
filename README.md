@@ -1,4 +1,4 @@
-# Qualidade de Vida em Portugal
+# Qualidade de Vida
 
 Projeto desenvolvido no âmbito da unidade curricular de Ciência de Dados.
 
