@@ -21,6 +21,8 @@ diretorio_resultados = os.path.join(diretorio_base, "resultados")
 os.makedirs(diretorio_visualizacoes, exist_ok=True)
 os.makedirs(diretorio_resultados, exist_ok=True)
 
+diretorio_validacao = os.path.join(diretorio_base, "validacao")
+os.makedirs(diretorio_validacao, exist_ok=True)
 
 def validar_resultados():
     """
@@ -40,12 +42,6 @@ def validar_resultados():
 
     # 4. Validar as análises de regressão
     validar_analises_regressao()
-
-    # 5. Verificar a consistência das tendências temporais
-    verificar_tendencias_temporais()
-
-    # 6. Gerar relatório de validação
-    gerar_relatorio_validacao()
 
     print("Validação concluída. Resultados salvos em:", diretorio_validacao)
 
@@ -68,7 +64,6 @@ def verificar_arquivos_resultados():
         # Resumos e análises
         "C:/Users/fuguz/Documents/ProjetoPROG/ElementosDeIACD/TRABALHOPRATICO/resumo_datasets.txt",
         "C:/Users/fuguz/Documents/ProjetoPROG/ElementosDeIACD/TRABALHOPRATICO/resumo_limpeza.txt",
-       
 
         # Relatório final
         "C:/Users/fuguz/Documents/ProjetoPROG/ElementosDeIACD/TRABALHOPRATICO/relatorio_final.txt"
@@ -381,3 +376,16 @@ def validar_analises_regressao():
             f.write("=" * 50 + "\n\n")
             f.write(f"ERRO: Arquivo {caminho_df_integrado} não encontrado.\n")
             f.write("Não foi possível validar as análises de regressão.\n")
+
+
+
+
+def main():
+    """
+    Função main que inicia a validação dos resultados.
+    """
+    validar_resultados()
+
+# Ponto de entrada
+if __name__ == "__main__":
+    main()
