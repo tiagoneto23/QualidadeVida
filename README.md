@@ -100,7 +100,7 @@ python nome_do_script.py
 ---
 
 ## Autores
-- Filipe Santana
+- Felipe Sant'ana
 - Tiago Neto
 - Simão Nambi 
 
