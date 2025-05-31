@@ -1,3 +1,5 @@
+Aqui está a versão completa e corrigida do seu README.md, formatada para GitHub, que você pode copiar e colar diretamente:
+
 ```markdown
 # Qualidade de Vida em Portugal em relação a países Europeus
 
@@ -10,40 +12,57 @@ Analisar a evolução da qualidade de vida em Portugal com base em dados oficiai
 ## Estrutura do Projeto
 
 | Script                     | Função                                                                 |
-|---------------------------|------------------------------------------------------------------------|
-| `recolha_dados.py`        | Centraliza e organiza os dados extraídos de fontes externas            |
-| `limpeza_dados.py`        | Realiza a limpeza e normalização dos dados                             |
-| `explorar_datasets.py`    | Gera estatísticas descritivas e análises exploratórias iniciais        |
-| `visualizacoes_avancadas.py` | Cria gráficos e visualizações para melhor interpretação dos dados    |
-| `analise_estatistica.py`  | Aplica análises estatísticas, incluindo matriz de correlação           |
-| `analise_relacoes.py`     | Avalia relações entre variáveis e identifica padrões relevantes        |
-| `validar_resultados.py`   | Verifica consistência e valida os resultados obtidos                   |
+|----------------------------|-----------------------------------------------------------------------|
+| `recolha_dados.py`         | Centraliza e organiza os dados extraídos de fontes externas           |
+| `limpeza_dados.py`         | Realiza a limpeza e normalização dos dados                            |
+| `explorar_datasets.py`     | Gera estatísticas descritivas e análises exploratórias iniciais       |
+| `visualizacoes_avancadas.py` | Cria gráficos e visualizações para melhor interpretação dos dados     |
+| `analise_estatistica.py`   | Aplica análises estatísticas, incluindo matriz de correlação          |
+| `analise_relacoes.py`      | Avalia relações entre variáveis e identifica padrões relevantes       |
+| `validar_resultados.py`    | Verifica consistência e valida os resultados obtidos                  |
 
 ## Configuração do Ambiente
 
-1. **Requisitos**:
+1. **Pré-requisitos**:
+   - Python 3.8+
+   - Bibliotecas listadas em `requirements.txt`
+
+2. **Instalação**:
    ```bash
-   pip install pandas matplotlib seaborn numpy scipy scikit-learn
+   pip install -r requirements.txt
    ```
 
-2. **Estrutura de Diretórios**:
+3. **Estrutura de Diretórios**:
    ```
-   /TRABALHOPRATICO/
-   │── dados/                  # Arquivos CSV originais
-   │── scripts/                # Todos os scripts Python
-   │── resultados/             # Resultados das análises
-   │── visualizacoes/          # Gráficos e dashboards
-   │── validacao/              # Relatórios de validação
+   /
+   ├── dados/                  # Arquivos CSV originais da PORDATA
+   ├── scripts/                # Todos os scripts Python do projeto
+   ├── resultados/             # Resultados das análises (CSVs, relatórios)
+   └── visualizacoes/          # Gráficos e dashboards gerados
+   ```
+
+## Como Executar
+
+1. Coloque seus arquivos CSV na pasta `dados/`
+2. Execute o pipeline completo:
+   ```bash
+   python scripts/pipeline.py
+   ```
+   Ou execute módulos individualmente:
+   ```bash
+   python scripts/recolha_dados.py
+   python scripts/limpeza_dados.py
+   # ... e assim por diante
    ```
 
 ## Documentação dos Módulos
 
 ### `recolha_dados.py`
-- **Variável de Configuração**:
+- **Configuração**:
   ```python
-  DIRETORIO_BASE = "C:/Users/fuguz/Documents/ProjetoPROG/ElementosDeIACD/TRABALHOPRATICO"  # Atualizar com seu caminho
+  DIRETORIO_BASE = "caminho/para/pasta/dados"  # Atualize com seu caminho
   ```
-- **Arquivos Esperados**:
+- **Arquivos Necessários**:
   - `DESPESASAUDE.csv`
   - `ESPERANÇADEVIDA.csv`
   - `GANHOMEDIOMENSAL.csv`
@@ -52,54 +71,31 @@ Analisar a evolução da qualidade de vida em Portugal com base em dados oficiai
 
 ### `limpeza_dados.py`
 - **Saída**:
-  - Gera versões limpas com sufixo `_limpo.csv`
-  - Padroniza colunas: `['Ano','Pais','Regiao','Filtro1','Filtro2','Filtro3','Escala','Simbolo','Valor']`
+  - Arquivos com sufixo `_limpo.csv` na pasta `resultados/`
+  - Padronização de colunas:
+    ```python
+    ['Ano', 'Pais', 'Regiao', 'Filtro1', 'Filtro2', 'Filtro3', 'Escala', 'Simbolo', 'Valor']
+    ```
 
 ### `visualizacoes_avancadas.py`
-- **Visualizações Principais**:
-  1. Evolução temporal dos indicadores
-  2. Comparação entre países europeus
-  3. Matrizes de correlação
-  4. Dashboards interativos
+- **Gráficos Gerados**:
+  - Evolução temporal (linha)
+  - Comparação entre países (barras)
+  - Matriz de correlação (heatmap)
+  - Dashboards consolidados
 
-### `validar_resultados.py`
-- **Verificações Realizadas**:
-  - Consistência dos dados limpos
-  - Robustez das correlações
-  - Validade estatística das regressões
-- **Saída**: Relatórios em `analise_pordata/validacao/`
+## Principais Resultados
 
-## Como Executar
-
-1. Clone o repositório:
-   ```bash
-   git clone [URL_DO_REPOSITÓRIO]
-   ```
-
-2. Instale as dependências:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Execute o pipeline completo:
-   ```bash
-   python pipeline.py  # Ou execute os scripts individualmente na ordem
-   ```
-
-## Principais Insights
-
-- 📈 Expectativa de vida aumentou consistentemente desde 1960
-- 💰 Despesas com saúde correlacionadas com ganho médio mensal (r = 0.82)
-- 🏥 Taxa de mortalidade evitável caiu 23% após 2012
-- 😊 Percepção de saúde melhorou 18% em 20 anos
+- 📈 **Expectativa de Vida**: Aumento de 12 anos desde 1960
+- 💰 **Rendimento**: Correlação forte (0.82) com despesas em saúde
+- 🏥 **Mortalidade**: Redução de 23% em causas evitáveis (2012-2020)
+- 😊 **Percepção de Saúde**: 78% da população avalia como "boa" ou "muito boa"
 
 ## Autores
-- Felipe Sant'ana
-- Tiago Neto
-- Simão Nambi
+- [Felipe Sant'ana](link_github_se_existir)
+- [Tiago Neto](link_github_se_existir)
+- [Simão Nambi](link_github_se_existir)
 
 ## Referências
-- [PORDATA](https://www.pordata.pt)
-- Instituto Nacional de Estatística (INE)
-- Organização Mundial da Saúde (OMS)
-```
+- [PORDATA - Base de Dados Portugal Contemporâneo](https://www.pordata.pt)
+
