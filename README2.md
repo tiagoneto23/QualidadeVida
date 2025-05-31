@@ -1,5 +1,3 @@
-Aqui está a versão completa do README.md em um único bloco para copiar e colar diretamente no GitHub:
-
 ```markdown
 # Qualidade de Vida em Portugal em relação a países Europeus
 
