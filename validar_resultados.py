@@ -381,11 +381,7 @@ def validar_analises_regressao():
 
 
 def main():
-    """
-    Função main que inicia a validação dos resultados.
-    """
     validar_resultados()
 
-# Ponto de entrada
 if __name__ == "__main__":
     main()
