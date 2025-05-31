@@ -1,6 +1,3 @@
-Aqui está a versão completa e corrigida do seu README.md, formatada para GitHub, que você pode copiar e colar diretamente:
-
-```markdown
 # Qualidade de Vida em Portugal em relação a países Europeus
 
 Projeto desenvolvido no âmbito da unidade curricular de Ciência de Dados.
