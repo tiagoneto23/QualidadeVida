@@ -1,4 +1,4 @@
-# Qualidade de Vida
+# Qualidade de Vida em Portugal em elação a países Europeus
 
 Projeto desenvolvido no âmbito da unidade curricular de Ciência de Dados.
 
