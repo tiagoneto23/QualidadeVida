@@ -1,0 +1,16 @@
+ANÁLISE DE REGRESSÃO LINEAR
+==================================================
+
+Regressão: ESPERANÇADEVIDA.csv vs TAXADEMORTALIDADEVITAVEL.csv
+Equação da reta: TAXADEMORTALIDADEVITAVEL.csv = -23.3209 * ESPERANÇADEVIDA.csv + 695.5022
+R²: 0.6371
+p-valor: 0.0032
+Erro padrão: 5.8669
+
+Interpretação:
+- A relação é estatisticamente significativa (p < 0.05).
+- O modelo explica uma parte moderada da variação em TAXADEMORTALIDADEVITAVEL.csv (R² > 0.5).
+- Para cada unidade de aumento em ESPERANÇADEVIDA.csv, TAXADEMORTALIDADEVITAVEL.csv diminui em média 23.3209 unidades.
+
+--------------------------------------------------
+

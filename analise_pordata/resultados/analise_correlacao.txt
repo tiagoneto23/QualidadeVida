@@ -1,0 +1,44 @@
+ANÁLISE DE CORRELAÇÃO
+==================================================
+
+Matriz de Correlação:
+                              GANHOMEDIOMENSAL.csv  ...  TAXADEMORTALIDADEVITAVEL.csv
+GANHOMEDIOMENSAL.csv                      1.000000  ...                     -0.061757
+ESPERANÇADEVIDA.csv                       0.472944  ...                     -0.798188
+DESPESASAUDE.csv                          0.983007  ...                     -0.430075
+PERCEÇAODESAUDE.csv                       0.868787  ...                     -0.293651
+TAXADEMORTALIDADEVITAVEL.csv             -0.061757  ...                      1.000000
+
+[5 rows x 5 columns]
+
+Correlações mais fortes:
+GANHOMEDIOMENSAL.csv vs DESPESASAUDE.csv: 0.9830
+  Interpretação: Forte correlação positiva - quando GANHOMEDIOMENSAL.csv aumenta, DESPESASAUDE.csv tende a aumentar também.
+
+GANHOMEDIOMENSAL.csv vs PERCEÇAODESAUDE.csv: 0.8688
+  Interpretação: Forte correlação positiva - quando GANHOMEDIOMENSAL.csv aumenta, PERCEÇAODESAUDE.csv tende a aumentar também.
+
+ESPERANÇADEVIDA.csv vs TAXADEMORTALIDADEVITAVEL.csv: -0.7982
+  Interpretação: Forte correlação negativa - quando ESPERANÇADEVIDA.csv aumenta, TAXADEMORTALIDADEVITAVEL.csv tende a diminuir.
+
+DESPESASAUDE.csv vs PERCEÇAODESAUDE.csv: 0.7771
+  Interpretação: Forte correlação positiva - quando DESPESASAUDE.csv aumenta, PERCEÇAODESAUDE.csv tende a aumentar também.
+
+ESPERANÇADEVIDA.csv vs DESPESASAUDE.csv: 0.6381
+  Interpretação: Correlação positiva moderada entre ESPERANÇADEVIDA.csv e DESPESASAUDE.csv.
+
+GANHOMEDIOMENSAL.csv vs ESPERANÇADEVIDA.csv: 0.4729
+  Interpretação: Correlação fraca entre GANHOMEDIOMENSAL.csv e ESPERANÇADEVIDA.csv.
+
+ESPERANÇADEVIDA.csv vs PERCEÇAODESAUDE.csv: 0.4342
+  Interpretação: Correlação fraca entre ESPERANÇADEVIDA.csv e PERCEÇAODESAUDE.csv.
+
+DESPESASAUDE.csv vs TAXADEMORTALIDADEVITAVEL.csv: -0.4301
+  Interpretação: Correlação fraca entre DESPESASAUDE.csv e TAXADEMORTALIDADEVITAVEL.csv.
+
+PERCEÇAODESAUDE.csv vs TAXADEMORTALIDADEVITAVEL.csv: -0.2937
+  Interpretação: Correlação fraca entre PERCEÇAODESAUDE.csv e TAXADEMORTALIDADEVITAVEL.csv.
+
+GANHOMEDIOMENSAL.csv vs TAXADEMORTALIDADEVITAVEL.csv: -0.0618
+  Interpretação: Correlação fraca entre GANHOMEDIOMENSAL.csv e TAXADEMORTALIDADEVITAVEL.csv.
+
