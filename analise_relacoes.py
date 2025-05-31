@@ -29,7 +29,7 @@ os.makedirs(diretorio_resultados, exist_ok=True)
 
 # Função para carregar os datasets limpos
 def carregar_datasets_limpos():
-    diretorio = 'C:/Users/fuguz/Documents/ProjetoPROG/ElementosDeIACD/TRABALHOPRATICO/analise_pordata'
+    diretorio = 'C:/Users/fuguz/Documents/ProjetoPROG/ElementosDeIACD/TRABALHOPRATICO'
     datasets = {}
 
     # Lista de arquivos limpos
@@ -128,12 +128,6 @@ def analisar_relacoes(df_integrado):
 
     # 3. Análise de componentes principais (PCA)
     analisar_pca(df_integrado)
-
-    # 4. Análise de clusters
-    analisar_clusters(df_integrado)
-
-    # 5. Análise de tendências temporais
-    analisar_tendencias_temporais(df_integrado)
 
 
 # 1. Análise de correlação
@@ -408,3 +402,31 @@ def analisar_pca(df_integrado):
         plt.savefig(caminho_grafico)
         plt.close()
         print(f"Gráfico do círculo de correlação salvo em: {caminho_grafico}")
+
+def main():
+    print("Iniciando a análise PORDATA...")
+
+    # Carregar os datasets limpos
+    datasets = carregar_datasets_limpos()
+
+    if not datasets:
+        print("Nenhum dataset foi carregado com sucesso. Encerrando execução.")
+        return
+
+    # Criar o dataframe integrado
+    df_integrado = criar_dataframe_integrado(datasets)
+
+    if df_integrado is None or df_integrado.empty:
+        print("Dataframe integrado não pôde ser criado. Encerrando execução.")
+        return
+
+    # Analisar relações entre variáveis
+    analisar_relacoes(df_integrado)
+
+    print("\nAnálise concluída. Resultados e visualizações foram salvos nos diretórios:")
+    print(f"- Visualizações: {diretorio_visualizacoes}")
+    print(f"- Resultados: {diretorio_resultados}")
+
+
+if __name__ == "__main__":
+    main()
