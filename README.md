@@ -2,13 +2,13 @@
 
 Projeto desenvolvido no âmbito da unidade curricular de Ciência de Dados.
 
-## 🧠 Objetivo
+## Objetivo
 
 Analisar a evolução da qualidade de vida em Portugal com base em dados oficiais recolhidos da PORDATA, através de técnicas de ciência de dados, incluindo limpeza, exploração, visualização e análise estatística.
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 O projeto está dividido em módulos, cada um responsável por uma etapa do processo de análise:
 
@@ -24,7 +24,7 @@ O projeto está dividido em módulos, cada um responsável por uma etapa do proc
 
 ---
 
-## 📄 Conjunto de Dados Utilizados
+## Conjunto de Dados Utilizados
 
 Todos os dados foram recolhidos da [PORDATA](https://www.pordata.pt/) e estão em formato `.csv`:
 
@@ -36,7 +36,7 @@ Todos os dados foram recolhidos da [PORDATA](https://www.pordata.pt/) e estão e
 
 ---
 
-## 🔍 Principais Insights
+## Principais Insights
 
 - **A expectativa de vida aumentou** consistentemente desde 1960.
 - **Despesas com saúde cresceram** entre 2000 e 2020, com correlação forte com o ganho médio mensal.
@@ -45,7 +45,7 @@ Todos os dados foram recolhidos da [PORDATA](https://www.pordata.pt/) e estão e
 
 ---
 
-## 📈 Técnicas Utilizadas
+## Técnicas Utilizadas
 
 - Limpeza de dados com `pandas`
 - Análise descritiva e estatística
@@ -55,15 +55,15 @@ Todos os dados foram recolhidos da [PORDATA](https://www.pordata.pt/) e estão e
 
 ---
 
-## 📝 Relatórios e Entregas
+## Relatórios e Entregas
 
-- ✅ **[Relatório em formato .ipynb](./Relatorio_Projeto_Fases_Qualidade_Vida.ipynb)** com explicações organizadas por fase
+- ✅ **[Relatório em formato .ipynb](./Relatorio_final.ipynb)** com explicações organizadas por fase
 - ✅ Repositório Git com todo o código usado no projeto
 - ✅ Apresentação narrativa das conclusões extraídas a partir dos dados analisados
 
 ---
 
-## 👨‍💻 Requisitos
+## Requisitos
 
 - Python 3.x
 - pandas
